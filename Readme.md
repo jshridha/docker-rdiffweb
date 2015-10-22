@@ -31,6 +31,7 @@ docker run -d --name=rdiffweb -p 8080:8080 jshridha/rdiffweb:latest
 **Example**: Run with persistent storage and access to backups/restores
 ```
 docker run -d --name=rdiffweb -p 8080:8080 -v /docker/rdiffweb/config:/etc/rdiffweb -v /var/backups:/backups -v /var/restores:/restores jshridha/rdiffweb:latest
+```
 
 Access
 =======
