@@ -22,7 +22,6 @@ This container needs access to a minimum of three external volumes.
 /backups is the location where rdiff-backup stores its backups.
 /restores is the location where backups should be restored.
 
-```
 **Example**: Run without persistent storage or access to backups/restores
 ```
 docker run -d --name=rdiffweb -p 8080:8080 jshridha/rdiffweb:latest
