@@ -26,7 +26,7 @@ RUN wget --no-check-certificate -O rdiffweb.tar.gz https://github.com/ikus060/rd
 	sudo python setup.py install && \
 	sudo update-rc.d rdiffweb defaults
 
-VOLUME /config /backups /restore
+VOLUME /config /backups /restores
 
 EXPOSE 8080
 
