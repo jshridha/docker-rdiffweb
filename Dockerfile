@@ -11,7 +11,12 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
 	python-setuptools \
 	python-babel \
 	rdiff-backup \
-	supervisor
+	supervisor && \
+	rm -rf /usr/share/locale/* && \
+	rm -rf /usr/share/man/* && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 
 RUN apt-get install wget
 	
@@ -24,7 +29,9 @@ RUN wget --no-check-certificate -O rdiffweb.tar.gz https://github.com/ikus060/rd
 	cd rdiffweb-* && \
 	python setup.py build && \
 	sudo python setup.py install && \
-	sudo update-rc.d rdiffweb defaults
+	sudo update-rc.d rdiffweb defaults && \
+	rm -rv rdiffweb-master
+	rm rdiffweb.tar.gz
 
 VOLUME /config /backups /restores
 
